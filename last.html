@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Madhu ❤️ | Our Beautiful Memories</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #ffd1dc 0%,
+                #e6e6fa 25%,
+                #ffefd5 50%,
+                #e6e6fa 75%,
+                #ffd1dc 100%
+            );
+
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+
+            font-family: 'Quicksand', sans-serif;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND ANIMATION
+        ========================== */
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* =========================
+           SPARKLES
+        ========================== */
+
+        .magic-sparkles {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .magic-sparkles::before,
+        .magic-sparkles::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background-image:
+                radial-gradient(circle, white 1px, transparent 1px);
+
+            background-size: 50px 50px;
+
+            animation: sparkleLayer 8s linear infinite;
+            opacity: 0.45;
+        }
+
+        .magic-sparkles::after {
+            animation-delay: -4s;
+            transform: rotate(45deg);
+        }
+
+        @keyframes sparkleLayer {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50px);
+            }
+        }
+
+        /* =========================
+           FLOATING HEARTS
+        ========================== */
+
+        .floating-hearts {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -80px;
+            font-size: 1.5rem;
+
+            opacity: 0.65;
+
+            animation:
+                floatHeart var(--float-duration, 7s)
+                ease-in-out infinite;
+
+            animation-delay: var(--delay, 0s);
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+        }
+
+        .heart:nth-child(2) {
+            left: 30%;
+        }
+
+        .heart:nth-child(3) {
+            left: 50%;
+        }
+
+        .heart:nth-child(4) {
+            left: 70%;
+        }
+
+        .heart:nth-child(5) {
+            left: 90%;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translate(
+                    0,
+                    100vh
+                ) rotate(0deg);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(
+                    var(--translate-x, 0),
+                    -120vh
+                ) rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           WELCOME SECTION
+        ========================== */
+
+        .welcome {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+
+            position: relative;
+            z-index: 3;
+        }
+
+        .small-title {
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            color: #b05ca8;
+
+            margin-bottom: 1rem;
+
+            animation: fadeIn 1.5s ease;
+        }
+
+        .welcome h1 {
+            font-family: 'Dancing Script', cursive;
+
+            font-size: clamp(3rem, 8vw, 5.5rem);
+
+            color: #ff69b4;
+
+            text-shadow:
+                2px 2px 5px rgba(0, 0, 0, 0.08);
+
+            animation: fadeInScale 2s ease;
+        }
+
+        .welcome h1 span {
+            color: #da70d6;
+        }
+
+        .welcome p {
+            font-size: 1.15rem;
+
+            max-width: 700px;
+
+            margin: 1.5rem auto;
+
+            line-height: 1.8;
+
+            color: #555;
+
+            animation: fadeIn 2s ease 0.5s both;
+        }
+
+        /* =========================
+           LOVE BADGE
+        ========================== */
+
+        .love-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-top: 1rem;
+
+            padding: 10px 22px;
+
+            border-radius: 50px;
+
+            background: rgba(255, 255, 255, 0.65);
+
+            backdrop-filter: blur(10px);
+
+            color: #d85ca9;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 8px 25px rgba(255, 105, 180, 0.15);
+
+            animation: floatBadge 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        /* =========================
+           MEMORY SECTION
+        ========================== */
+
+        .memory-container {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 2rem;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 2rem;
+
+            position: relative;
+            z-index: 3;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.88);
+
+            border-radius: 25px;
+
+            padding: 1.3rem;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.09);
+
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-12px) scale(1.02);
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        .memory-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -120%;
+
+            width: 80%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.6),
+                    transparent
+                );
+
+            transform: skewX(-20deg);
+
+            transition: 0.8s;
+        }
+
+        .memory-card:hover::before {
+            left: 140%;
+        }
+
+        .memory-img {
+            width: 100%;
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            margin-bottom: 1.2rem;
+
+            transition:
+                transform 0.6s ease;
+        }
+
+        .memory-card:hover .memory-img {
+            transform: scale(1.04);
+        }
+
+        .memory-date {
+            font-family: 'Dancing Script', cursive;
+
+            color: #ff69b4;
+
+            font-size: 1.7rem;
+
+            margin-bottom: 0.6rem;
+        }
+
+        .memory-caption {
+            font-size: 1rem;
+
+            line-height: 1.7;
+
+            color: #666;
+        }
+
+        /* =========================
+           FINAL MESSAGE
+        ========================== */
+
+        .final-message {
+            text-align: center;
+
+            padding: 5rem 2rem;
+
+            margin-top: 4rem;
+
+            background:
+                rgba(255, 255, 255, 0.35);
+
+            backdrop-filter: blur(12px);
+
+            position: relative;
+
+            z-index: 3;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.5);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .final-message h2 {
+            font-family: 'Dancing Script', cursive;
+
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+
+            color: #ff69b4;
+
+            margin-bottom: 2rem;
+
+            animation:
+                heartbeat 2.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.07);
+            }
+        }
+
+        .final-message p {
+            max-width: 800px;
+
+            margin: 0 auto 1.8rem;
+
+            font-size: 1.15rem;
+
+            line-height: 1.9;
+
+            color: #555;
+        }
+
+        .final-message strong {
+            color: #e45aa9;
+        }
+
+        /* =========================
+           LOVE BUTTON
+        ========================== */
+
+        .goodbye-btn {
+            display: inline-block;
+
+            margin-top: 1rem;
+
+            padding: 1rem 2.2rem;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            background:
+                linear-gradient(
+                    45deg,
+                    #ff69b4,
+                    #da70d6
+                );
+
+            color: white;
+
+            border: none;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 8px 25px rgba(255, 105, 180, 0.35);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            animation:
+                floatButton 3s ease-in-out infinite;
+        }
+
+        .goodbye-btn:hover {
+            transform: translateY(-6px) scale(1.04);
+
+            box-shadow:
+                0 12px 30px rgba(255, 105, 180, 0.5);
+        }
+
+        @keyframes floatButton {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* =========================
+           LOVE QUOTE
+        ========================== */
+
+        .love-quote {
+            margin-top: 3rem;
+
+            font-family: 'Dancing Script', cursive;
+
+            font-size: 1.8rem;
+
+            color: #b05ca8;
+        }
+
+        /* =========================
+           FADE ANIMATIONS
+        ========================== */
+
+        @keyframes fadeInScale {
+
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* =========================
+           SCROLLBAR
+        ========================== */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background:
+                linear-gradient(
+                    45deg,
+                    #ff69b4,
+                    #da70d6
+                );
+
+            border-radius: 10px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .welcome {
+                padding: 4rem 1.5rem 2rem;
+            }
+
+            .welcome p {
+                font-size: 1rem;
+            }
+
+            .memory-container {
+                grid-template-columns: 1fr;
+
+                padding: 1.2rem;
+            }
+
+            .memory-img {
+                height: 260px;
+            }
+
+            .final-message {
+                padding: 4rem 1.5rem;
+            }
+
+            .final-message p {
+                font-size: 1rem;
+            }
+
+            .love-quote {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .memory-img {
+                height: 230px;
+            }
+
+            .welcome h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         SPARKLES
+    ========================== -->
+
+    <div class="magic-sparkles"></div>
+
+
+    <!-- =========================
+         FLOATING HEARTS
+    ========================== -->
+
+    <div class="floating-hearts">
+
+        <div
+            class="heart"
+            style="--float-duration: 7s; --delay: 0s; --translate-x: 30px;">
+            💝
+        </div>
+
+        <div
+            class="heart"
+            style="--float-duration: 9s; --delay: 1s; --translate-x: -40px;">
+            💖
+        </div>
+
+        <div
+            class="heart"
+            style="--float-duration: 8s; --delay: 2s; --translate-x: 50px;">
+            💗
+        </div>
+
+        <div
+            class="heart"
+            style="--float-duration: 10s; --delay: 3s; --translate-x: -30px;">
+            💓
+        </div>
+
+        <div
+            class="heart"
+            style="--float-duration: 6s; --delay: 4s; --translate-x: 40px;">
+            💕
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         WELCOME
+    ========================== -->
+
+    <section class="welcome">
+
+        <div class="small-title">
+            A Little Something For You ✨
+        </div>
+
+        <h1>
+            For My Beautiful <span>Madhu</span> ❤️
+        </h1>
+
+        <p>
+            Every moment with you feels a little more beautiful.
+            These are just a few memories, but you mean so much
+            more to me than these words can ever explain. 💗
+        </p>
+
+        <div class="love-badge">
+            💎 My Precious Diamond
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORY CARDS
+    ========================== -->
+
+    <div class="memory-container">
+
+
+        <!-- CARD 1 -->
+
+        <div class="memory-card">
+
+            <img
+                src="./d1.jpg"
+                alt="Madhu's Beautiful Smile"
+                class="memory-img">
+
+            <div class="memory-date">
+                That Beautiful Smile ❤️
+            </div>
+
+            <div class="memory-caption">
+                Your smile has a way of making even ordinary
+                moments feel special. I could honestly look
+                at it forever. 🥹💗
+            </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="memory-card">
+
+            <img
+                src="./d2.jpg"
+                alt="Our Beautiful Moment"
+                class="memory-img">
+
+            <div class="memory-date">
+                Us, Just Us 💕
+            </div>
+
+            <div class="memory-caption">
+                Every moment spent with you becomes a memory
+                I want to keep close to my heart. I’m grateful
+                for every little moment we share. 🫶
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="memory-card">
+
+            <img
+                src="./d3.jpg"
+                alt="My Pretty Soul"
+                class="memory-img">
+
+            <div class="memory-date">
+                My Pretty Soul 🌸
+            </div>
+
+            <div class="memory-caption">
+                You’re not just beautiful on the outside —
+                you have a beautiful heart too. Never stop
+                being the amazing girl you are. ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FINAL MESSAGE
+    ========================== -->
+
+    <section class="final-message">
+
+        <h2>
+            For You, Madhu ❤️
+        </h2>
+
+
+        <p>
+            Every laugh, every conversation, every little
+            moment with you has become something I’ll always
+            treasure. 💫
+            <br><br>
+
+            You’ve become such a special part of my life,
+            and I honestly don’t want to imagine my story
+            without you in it.
+        </p>
+
+
+        <p>
+            I may not always have the perfect words to express
+            how much you mean to me, but please remember one thing —
+            <br><br>
+
+            <strong>
+                You are my precious diamond. 💎
+            </strong>
+
+            <br>
+
+            I want to keep you close to my heart and see you
+            shine, always and forever. ❤️
+        </p>
+
+
+        <p>
+            On your birthday, I only wish that you stay happy,
+            blessed, loved, and surrounded by everything that
+            makes you smile. 🌸
+            <br><br>
+
+            And no matter what happens,
+            <strong>
+                I’ll always be here for you. 🫶
+            </strong>
+        </p>
+
+
+        <a
+            href="#"
+            class="goodbye-btn"
+            onclick="showLove(event)">
+            I Love You, Madhu ❤️
+        </a>
+
+
+        <div class="love-quote">
+            "Some people become memories,
+            but you became a part of my heart." 💗
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function showLove(event) {
+
+            event.preventDefault();
+
+            const messages = [
+                "I Love You, Madhu ❤️",
+                "You Are My Precious Diamond 💎",
+                "Stay With Me Forever 🫶",
+                "You Make My World Beautiful 🌸",
+                "Always Keep Smiling, My Love 💗"
+            ];
+
+            const randomMessage =
+                messages[
+                    Math.floor(
+                        Math.random() * messages.length
+                    )
+                ];
+
+            alert(randomMessage);
+        }
+
+    </script>
+
+</body>
+
+</html>
